@@ -28,7 +28,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
     } else {
         // Next player
-       nextPlayer();
+        nextPlayer();
     }
 });
 
@@ -41,7 +41,12 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
     // Check if player won the game
-    nextPlayer();
+    if (scores[activePlayer] >= 20) {
+        document.querySelector('#name-' + activePlayer).textContent = 'Winner';
+    } else {
+        // Next player
+        nextPlayer();
+    }
 
 });
 
